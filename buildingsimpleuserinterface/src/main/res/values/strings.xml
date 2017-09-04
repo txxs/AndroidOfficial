@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BuildingSimpleUserInterface</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_message">请输入字符串……</string>
+    <string name="button_send">发送</string>
+    <string name="title_display_message">收到的消息</string>
+</resources>
