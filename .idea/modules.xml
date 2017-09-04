@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/actionbar/actionbar.iml" filepath="$PROJECT_DIR$/actionbar/actionbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/buildingsimpleuserinterface/buildingsimpleuserinterface.iml" filepath="$PROJECT_DIR$/buildingsimpleuserinterface/buildingsimpleuserinterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragment/fragment.iml" filepath="$PROJECT_DIR$/fragment/fragment.iml" />
     </modules>
   </component>
 </project>

@@ -1,1 +1,1 @@
-include ':app', ':buildingsimpleuserinterface', ':actionbar'
+include ':app', ':buildingsimpleuserinterface', ':actionbar', ':fragment'
