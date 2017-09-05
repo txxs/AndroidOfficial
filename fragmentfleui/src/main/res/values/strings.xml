@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FragmentFleUI</string>
+    <string name="btn_left">左侧Fragment</string>
+    <string name="btn_right">右侧Fragment</string>
+</resources>
