@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 FragmentTransaction transaction = fragmentManager.
                         beginTransaction();
                 transaction.replace(R.id.right_layout, fragment);
+                //回退键，再次回退的时候才会退出
+                transaction.addToBackStack(null);
                 transaction.commit();
                 break;
             default:
