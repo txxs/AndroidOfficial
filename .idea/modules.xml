@@ -5,9 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidOfficial.iml" filepath="$PROJECT_DIR$/AndroidOfficial.iml" />
       <module fileurl="file://$PROJECT_DIR$/actionbar/actionbar.iml" filepath="$PROJECT_DIR$/actionbar/actionbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/broadcast/broadcast.iml" filepath="$PROJECT_DIR$/broadcast/broadcast.iml" />
       <module fileurl="file://$PROJECT_DIR$/buildingsimpleuserinterface/buildingsimpleuserinterface.iml" filepath="$PROJECT_DIR$/buildingsimpleuserinterface/buildingsimpleuserinterface.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragment/fragment.iml" filepath="$PROJECT_DIR$/fragment/fragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentfleui/fragmentfleui.iml" filepath="$PROJECT_DIR$/fragmentfleui/fragmentfleui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentnews/fragmentnews.iml" filepath="$PROJECT_DIR$/fragmentnews/fragmentnews.iml" />
     </modules>
   </component>
 </project>
