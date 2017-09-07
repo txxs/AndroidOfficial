@@ -7,12 +7,14 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcast/broadcast.iml" filepath="$PROJECT_DIR$/broadcast/broadcast.iml" />
       <module fileurl="file://$PROJECT_DIR$/buildingsimpleuserinterface/buildingsimpleuserinterface.iml" filepath="$PROJECT_DIR$/buildingsimpleuserinterface/buildingsimpleuserinterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/choosepic/choosepic.iml" filepath="$PROJECT_DIR$/choosepic/choosepic.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragment/fragment.iml" filepath="$PROJECT_DIR$/fragment/fragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentfleui/fragmentfleui.iml" filepath="$PROJECT_DIR$/fragmentfleui/fragmentfleui.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentnews/fragmentnews.iml" filepath="$PROJECT_DIR$/fragmentnews/fragmentnews.iml" />
       <module fileurl="file://$PROJECT_DIR$/notification/notification.iml" filepath="$PROJECT_DIR$/notification/notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedpreferences/sharedpreferences.iml" filepath="$PROJECT_DIR$/sharedpreferences/sharedpreferences.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedpreferencesstorepwd/sharedpreferencesstorepwd.iml" filepath="$PROJECT_DIR$/sharedpreferencesstorepwd/sharedpreferencesstorepwd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sms/sms.iml" filepath="$PROJECT_DIR$/sms/sms.iml" />
     </modules>
   </component>
 </project>
