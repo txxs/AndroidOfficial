@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/fragment" />
             <option value="$PROJECT_DIR$/fragmentfleui" />
             <option value="$PROJECT_DIR$/fragmentnews" />
+            <option value="$PROJECT_DIR$/notification" />
             <option value="$PROJECT_DIR$/sharedpreferences" />
             <option value="$PROJECT_DIR$/sharedpreferencesstorepwd" />
           </set>
