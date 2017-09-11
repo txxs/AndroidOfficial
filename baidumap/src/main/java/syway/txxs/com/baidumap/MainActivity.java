@@ -1,15 +1,21 @@
 package syway.txxs.com.baidumap;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.baidu.mapapi.BMapManager;
 import com.baidu.mapapi.SDKInitializer;
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MarkerOptions;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.model.LatLng;
 
 public class MainActivity extends Activity {
+
     MapView mMapView = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +25,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         //获取地图控件引用
         mMapView = (MapView) findViewById(R.id.map_view);
+        BaiduMap mBaiduMap = mMapView.getMap();
+        mark(mBaiduMap);
     }
     @Override
     protected void onDestroy() {
@@ -37,5 +45,23 @@ public class MainActivity extends Activity {
         super.onPause();
         //在activity执行onPause时执行mMapView. onPause ()，实现地图生命周期管理
         mMapView.onPause();
+    }
+
+    /**
+     * 添加图层
+     * @param mBaiduMap
+     */
+    public void mark(BaiduMap mBaiduMap ){
+        //定义Maker坐标点
+        LatLng point = new LatLng(39.963175, 116.400244);
+        //构建Marker图标
+        BitmapDescriptor bitmap = BitmapDescriptorFactory
+                .fromResource(R.mipmap.ic_launcher);
+        //构建MarkerOption，用于在地图上添加Marker
+        OverlayOptions option = new MarkerOptions()
+                .position(point)
+                .icon(bitmap);
+        //在地图上添加Marker，并显示
+        mBaiduMap.addOverlay(option);
     }
 }
