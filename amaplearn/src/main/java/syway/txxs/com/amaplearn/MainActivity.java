@@ -39,6 +39,8 @@ public class MainActivity extends Activity {
         location();
         //界面显示的基本内容
         uiBasic();
+        //在地图上添加图标
+        MarkerActivity markerActivity = new MarkerActivity(aMap);
     }
 
     public void location(){
