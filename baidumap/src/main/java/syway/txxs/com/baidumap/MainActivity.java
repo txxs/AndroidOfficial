@@ -3,19 +3,9 @@ package syway.txxs.com.baidumap;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.baidu.mapapi.SDKInitializer;
-import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.BitmapDescriptor;
-import com.baidu.mapapi.map.BitmapDescriptorFactory;
-import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.map.MarkerOptions;
-import com.baidu.mapapi.map.MyLocationConfiguration;
-import com.baidu.mapapi.map.MyLocationData;
-import com.baidu.mapapi.map.OverlayOptions;
-import com.baidu.mapapi.model.LatLng;
 
 public class MainActivity extends Activity {
-
+/*
     MapView mMapView = null;
 
     @Override
@@ -49,10 +39,10 @@ public class MainActivity extends Activity {
         mMapView.onPause();
     }
 
-    /**
+    *//**
      * 添加图层
      * @param mBaiduMap
-     */
+     *//*
     public void mark(BaiduMap mBaiduMap ){
         //定义Maker坐标点
         LatLng point = new LatLng(39.963175, 116.400244);
@@ -62,7 +52,7 @@ public class MainActivity extends Activity {
         OverlayOptions option = new MarkerOptions().position(point).icon(bitmap);
         //在地图上添加Marker，并显示
         mBaiduMap.addOverlay(option);
-    }
+    }*/
 
 
 

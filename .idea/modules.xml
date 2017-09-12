@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/androidthread/androidthread.iml" filepath="$PROJECT_DIR$/androidthread/androidthread.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baidumap/baidumap.iml" filepath="$PROJECT_DIR$/baidumap/baidumap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baidumaplocation/baidumaplocation.iml" filepath="$PROJECT_DIR$/baidumaplocation/baidumaplocation.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcast/broadcast.iml" filepath="$PROJECT_DIR$/broadcast/broadcast.iml" />
       <module fileurl="file://$PROJECT_DIR$/buildingsimpleuserinterface/buildingsimpleuserinterface.iml" filepath="$PROJECT_DIR$/buildingsimpleuserinterface/buildingsimpleuserinterface.iml" />
       <module fileurl="file://$PROJECT_DIR$/choosepic/choosepic.iml" filepath="$PROJECT_DIR$/choosepic/choosepic.iml" />
