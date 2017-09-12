@@ -4,6 +4,8 @@ import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.MyLocationData;
 
 /**
  * Created by jianghuimin on 2017/9/11.
@@ -11,8 +13,26 @@ import com.baidu.location.LocationClient;
 
 public class MyLocationListener implements BDLocationListener {
 
+    private BaiduMap mBaiduMap;
+
+    public MyLocationListener(){
+
+    }
+
+    public MyLocationListener(BaiduMap mBaiduMap){
+        this.mBaiduMap=mBaiduMap;
+    }
+
     @Override
     public void onReceiveLocation(BDLocation location) {
+
+        MyLocationData locData = new MyLocationData.Builder()
+                .accuracy(location.getRadius())
+                // 此处设置开发者获取到的方向信息，顺时针0-360
+                .direction(100).latitude(location.getLatitude())
+                .longitude(location.getLongitude()).build();
+        // 设置定位数据
+        mBaiduMap.setMyLocationData(locData);
 
         //获取定位结果
         location.getTime();    //获取定位时间
