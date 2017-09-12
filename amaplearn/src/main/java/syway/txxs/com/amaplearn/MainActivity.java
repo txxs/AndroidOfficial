@@ -52,6 +52,9 @@ public class MainActivity extends Activity {
         myLocationStyle.interval(2000);
         BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.mipmap.share);
         myLocationStyle.myLocationIcon(bitmapDescriptor);
+        //将蓝圈设置为不可见
+        myLocationStyle.strokeColor(1000);
+        myLocationStyle.radiusFillColor(1000);
         aMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
         // 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
         aMap.setMyLocationEnabled(true);
