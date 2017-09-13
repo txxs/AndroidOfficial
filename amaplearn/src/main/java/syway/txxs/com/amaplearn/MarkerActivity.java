@@ -80,7 +80,7 @@ public class MarkerActivity extends Activity implements AMap.OnMarkerClickListen
         markerOption.position(latLng2);
         markerOption.title("西安市").snippet("西安市：34.341568, 108.940174");
         markerOption.draggable(true);
-        markerOption.icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        markerOption.icon(BitmapDescriptorFactory.fromResource(R.mipmap.five));
         marker2 = aMap.addMarker(markerOption);
         marker2.showInfoWindow();
 

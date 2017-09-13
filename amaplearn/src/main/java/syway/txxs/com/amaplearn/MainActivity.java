@@ -41,6 +41,8 @@ public class MainActivity extends Activity {
         uiBasic();
         //在地图上添加图标
         MarkerActivity markerActivity = new MarkerActivity(aMap);
+        //在地图上画线
+        LineActivity lineActivity = new LineActivity(aMap);
     }
 
     public void location(){
