@@ -56,15 +56,18 @@ public class MainActivity extends Activity {
         MyLocationStyle myLocationStyle;
         //初始化定位蓝点样式类
         myLocationStyle = new MyLocationStyle();
-        //连续定位、且将视角移动到地图中心点，定位点依照设备方向旋转，并且会跟随设备移动。（1秒1次定位）如果不设置myLocationType，默认也会执行此种模式。
-        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_FOLLOW_NO_CENTER );
+        //不随着地图的移动而移动
+        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE );
         //设置连续定位模式下的定位间隔，只在连续定位模式下生效，单次定位模式下不会生效。单位为毫秒。
         myLocationStyle.interval(2000);
-        BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.mipmap.share);
-        myLocationStyle.myLocationIcon(bitmapDescriptor);
         //将蓝圈设置为不可见
         myLocationStyle.strokeColor(1000);
         myLocationStyle.radiusFillColor(1000);
+        //添加自定义的图标
+        BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.mipmap.share);
+        myLocationStyle.myLocationIcon(bitmapDescriptor);
+        //添加锚点，解释http://www.jianshu.com/p/94ba4de209ed
+        myLocationStyle.anchor(0.5f, 1);
         aMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
         // 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
         aMap.setMyLocationEnabled(true);
@@ -78,7 +81,6 @@ public class MainActivity extends Activity {
         //显示指南针
         mUiSettings.setCompassEnabled(true);
         mUiSettings.setMyLocationButtonEnabled(true); //显示默认的定位按钮
-        aMap.setMyLocationEnabled(true);// 可触发定位并显示当前位置
     }
 
     @Override

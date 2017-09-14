@@ -18,7 +18,10 @@ import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.MapView;
+import com.amap.api.maps.model.BitmapDescriptor;
+import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.LatLng;
+import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.maps.model.PolylineOptions;
 
 /**
@@ -54,18 +57,24 @@ public class WalkLineActivity extends Activity implements LocationSource,AMapLoc
         }
         //定位
         aMap.setLocationSource(this);// 设置定位监听
-        aMap.getUiSettings().setMyLocationButtonEnabled(true);// 设置默认定位按钮是否显示
-        aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
-        // 设置定位的类型为定位模式 ，可以由定位 LOCATION_TYPE_LOCATE、跟随 LOCATION_TYPE_MAP_FOLLOW 或地图根据面向方向旋转 LOCATION_TYPE_MAP_ROTATE
-        aMap.setMyLocationType(AMap.LOCATION_TYPE_MAP_ROTATE);
-
-        //画线
-        // 缩放级别（zoom）：地图缩放级别范围为【4-20级】，值越大地图越详细
-        aMap.moveCamera(CameraUpdateFactory.zoomTo(16));
-        //使用 aMap.setMapTextZIndex(2) 可以将地图底图文字设置在添加的覆盖物之上
-        aMap.setMapTextZIndex(2);
-//        setUpMap(new LatLng(43.828, 87.621), new LatLng(43.800, 87.621));
-
+        MyLocationStyle myLocationStyle;
+        //初始化定位蓝点样式类
+        myLocationStyle = new MyLocationStyle();
+        //不随着地图的移动而移动
+        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE );
+        //设置连续定位模式下的定位间隔，只在连续定位模式下生效，单次定位模式下不会生效。单位为毫秒。
+        myLocationStyle.interval(2000);
+        //将蓝圈设置为不可见
+        myLocationStyle.strokeColor(1000);
+        myLocationStyle.radiusFillColor(1000);
+        myLocationStyle.anchor(0.5f, 1);
+        BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.mipmap.share);
+        myLocationStyle.myLocationIcon(bitmapDescriptor);
+        aMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
+        // 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
+        aMap.getUiSettings().setCompassEnabled(true);
+        aMap.getUiSettings().setMyLocationButtonEnabled(true);
+        aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
 
     }
     /**绘制两个坐标点之间的线段,从以前位置到现在位置*/
@@ -90,9 +99,6 @@ public class WalkLineActivity extends Activity implements LocationSource,AMapLoc
                 mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
 //                //定位成功
                 LatLng newLatLng = new LatLng(amapLocation.getLatitude(),amapLocation.getLongitude());
-//                Log.e("Amap", amapLocation.getLatitude() + "," + amapLocation.getLongitude());
-//                Toast.makeText(this, amapLocation.getLatitude() + "," + amapLocation.getLongitude() , Toast.LENGTH_SHORT).show();
-
                 if(isFirstLatLng){
                     //记录第一次的定位信息
                     oldLatLng = newLatLng;
