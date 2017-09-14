@@ -1,8 +1,11 @@
 package syway.txxs.com.amaplearn;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
@@ -17,6 +20,7 @@ public class MainActivity extends Activity {
     private MapView mapView;
     private AMap aMap;
     private UiSettings mUiSettings;
+    public Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +47,11 @@ public class MainActivity extends Activity {
         MarkerActivity markerActivity = new MarkerActivity(aMap);
         //在地图上画线
         LineActivity lineActivity = new LineActivity(aMap);
+        //启动一个新的activity记录行走的路径
+        drawWalkLine();
     }
 
-    public void location(){
+    public void  location(){
         //定位的一些显示
         MyLocationStyle myLocationStyle;
         //初始化定位蓝点样式类
@@ -98,5 +104,16 @@ public class MainActivity extends Activity {
         super.onSaveInstanceState(outState);
         //在activity执行onSaveInstanceState时执行mMapView.onSaveInstanceState (outState)，保存地图当前的状态
         mapView.onSaveInstanceState(outState);
+    }
+
+    public void drawWalkLine(){
+        button = (Button)findViewById(R.id.button_walk);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WalkLineActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

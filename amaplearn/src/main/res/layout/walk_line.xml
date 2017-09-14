@@ -4,16 +4,8 @@
     android:layout_height="match_parent">
 
     <com.amap.api.maps.MapView
-        android:id="@+id/map"
+        android:id="@+id/walk_map"
         android:layout_width="match_parent"
-        android:layout_height="477dp">
-    </com.amap.api.maps.MapView>
-
-    <Button
-        android:id="@+id/button_walk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="行走记录" />
-
+        android:layout_height="match_parent" />
 
 </LinearLayout>
