@@ -23,6 +23,7 @@ import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.maps.model.PolylineOptions;
+import com.amap.api.trace.LBSTraceClient;
 
 /**
  * Created by Administrator on 2016/1/23.
@@ -151,6 +152,14 @@ public class WalkLineActivity extends Activity implements LocationSource,AMapLoc
             // 在单次定位情况下，定位无论成功与否，都无需调用stopLocation()方法移除请求，定位sdk内部会移除
             mlocationClient.startLocation();
         }
+    }
+
+    /**
+     * 轨迹纠偏，将来再写
+     */
+    public void smooth(){
+        LBSTraceClient lbsTraceClient = LBSTraceClient.getInstance(getApplicationContext());
+        //lbsTraceClient.startTrace(TraceListener); //开始采集,需要传入一个状态回调监听。
     }
 
     /**
