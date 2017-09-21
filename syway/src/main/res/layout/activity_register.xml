@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/AppTheme"
+        android:fitsSystemWindows="true" />
+
+    <LinearLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_phone_number"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_phone_number"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:layout_toRightOf="@id/text_phone_number"
+            android:background="@null"
+            android:hint="@string/edt_phone_tips"
+            android:maxLength="20"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="2px"
+            android:layout_height="50dp"
+            android:background="@color/driverline" />
+
+        <Button
+            android:id="@+id/btn_vcode"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="3dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:text="@string/btn_vcode"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/text_phone_number"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/driverline" />
+
+
+    <LinearLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_vcode"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_vcode"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/edt_vcode"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:layout_toRightOf="@id/text_phone_number"
+            android:background="@null"
+            android:hint="@string/edt_vcode_tips"
+            android:maxLength="20"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/text_phone_number"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/driverline" />
+
+    <LinearLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_password"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_password"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:layout_toRightOf="@id/text_phone_number"
+            android:background="@null"
+            android:hint="@string/edt_password_tips"
+            android:maxLength="20"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/text_phone_number"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/driverline" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_select"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/btn_register"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>
