@@ -138,7 +138,6 @@
             android:maxLength="20"
             android:layout_gravity="center_vertical"
             android:textSize="16sp" />
-
     </LinearLayout>
 
     <View
@@ -163,5 +162,38 @@
         android:text="@string/regi_btn_register"
         android:textColor="@color/white"
         android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/regi_text_logined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center_vertical"
+            android:text="@string/regi_text_password_logined"
+            android:textColor="@color/trans"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/regi_btn_login"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@id/regi_text_logined"
+            android:background="@null"
+            android:hint="@string/regi_btn_login"
+            android:maxLength="20"
+            android:textColor="@color/green"
+            android:textSize="12sp" />
+    </LinearLayout>
 
 </LinearLayout>

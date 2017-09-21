@@ -2,7 +2,7 @@
     <!--APP的名称-->
     <string name="app_name">Syway</string>
 
-    <!--注册的-->
+    <!--注册页面-->
     <string name="regi_text_phone_number">手机号</string>
     <string name="regi_edt_phone_tips">请输入您的手机号</string>
     <string name="regi_btn_vcode">获取验证码</string>
@@ -11,5 +11,17 @@
     <string name="regi_text_password">密码</string>
     <string name="regi_edt_password_tips">请输入您的密码</string>
     <string name="regi_btn_register">注册</string>
+    <string name="regi_text_password_logined">已经注册过优游？</string>
+    <string name="regi_btn_login">点此登录</string>
+
+
+    <!--登录页面-->
+    <string name="login_text_phone_number">手机号</string>
+    <string name="login_edt_phone_tips">请输入您的手机号</string>
+    <string name="login_text_password">密码</string>
+    <string name="login_edt_password_tips">请输入您的密码</string>
+    <string name="login_btn_login">登录</string>
+
+
 
 </resources>
