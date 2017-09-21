@@ -21,12 +21,14 @@
             <option value="$PROJECT_DIR$/fragmentfleui" />
             <option value="$PROJECT_DIR$/fragmentnews" />
             <option value="$PROJECT_DIR$/location" />
+            <option value="$PROJECT_DIR$/loginDemoOne" />
             <option value="$PROJECT_DIR$/notification" />
             <option value="$PROJECT_DIR$/playaudio" />
             <option value="$PROJECT_DIR$/service" />
             <option value="$PROJECT_DIR$/sharedpreferences" />
             <option value="$PROJECT_DIR$/sharedpreferencesstorepwd" />
             <option value="$PROJECT_DIR$/sms" />
+            <option value="$PROJECT_DIR$/syway" />
             <option value="$PROJECT_DIR$/vally" />
             <option value="$PROJECT_DIR$/webview" />
           </set>

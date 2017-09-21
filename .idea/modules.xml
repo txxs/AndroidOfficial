@@ -16,12 +16,14 @@
       <module fileurl="file://$PROJECT_DIR$/fragmentfleui/fragmentfleui.iml" filepath="$PROJECT_DIR$/fragmentfleui/fragmentfleui.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentnews/fragmentnews.iml" filepath="$PROJECT_DIR$/fragmentnews/fragmentnews.iml" />
       <module fileurl="file://$PROJECT_DIR$/location/location.iml" filepath="$PROJECT_DIR$/location/location.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loginDemoOne/loginDemoOne.iml" filepath="$PROJECT_DIR$/loginDemoOne/loginDemoOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/notification/notification.iml" filepath="$PROJECT_DIR$/notification/notification.iml" />
       <module fileurl="file://$PROJECT_DIR$/playaudio/playaudio.iml" filepath="$PROJECT_DIR$/playaudio/playaudio.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedpreferences/sharedpreferences.iml" filepath="$PROJECT_DIR$/sharedpreferences/sharedpreferences.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedpreferencesstorepwd/sharedpreferencesstorepwd.iml" filepath="$PROJECT_DIR$/sharedpreferencesstorepwd/sharedpreferencesstorepwd.iml" />
       <module fileurl="file://$PROJECT_DIR$/sms/sms.iml" filepath="$PROJECT_DIR$/sms/sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/syway/syway.iml" filepath="$PROJECT_DIR$/syway/syway.iml" />
       <module fileurl="file://$PROJECT_DIR$/vally/vally.iml" filepath="$PROJECT_DIR$/vally/vally.iml" />
       <module fileurl="file://$PROJECT_DIR$/webview/webview.iml" filepath="$PROJECT_DIR$/webview/webview.iml" />
     </modules>
