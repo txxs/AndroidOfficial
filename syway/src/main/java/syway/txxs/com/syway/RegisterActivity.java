@@ -18,7 +18,7 @@ public class RegisterActivity extends Activity{
 
     private Button btn_vcode;
 
-    @BindView(R.id.toolbar)
+    @BindView(R.id.regi_toolbar)
     Toolbar toolbar;
 
     @Override

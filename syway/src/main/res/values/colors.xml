@@ -27,5 +27,5 @@
     <color name="dividerColor">#dedede</color>
 
     <!--注册中的划线-->
-    <color name="driverline"> #ffffff</color>
+    <color name="driverline">#ffffff</color>
 </resources>

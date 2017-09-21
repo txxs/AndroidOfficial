@@ -3,13 +3,13 @@
     <string name="app_name">Syway</string>
 
     <!--注册的-->
-    <string name="text_phone_number">手机号</string>
-    <string name="edt_phone_tips">请输入您的手机号</string>
-    <string name="btn_vcode">获取验证码</string>
-    <string name="text_vcode">验证码</string>
-    <string name="edt_vcode_tips">请输入您的验证码</string>
-    <string name="text_password">密码</string>
-    <string name="edt_password_tips">请输入您的密码</string>
-    <string name="btn_register">注册</string>
+    <string name="regi_text_phone_number">手机号</string>
+    <string name="regi_edt_phone_tips">请输入您的手机号</string>
+    <string name="regi_btn_vcode">获取验证码</string>
+    <string name="regi_text_vcode">验证码</string>
+    <string name="regi_edt_vcode_tips">请输入您的验证码</string>
+    <string name="regi_text_password">密码</string>
+    <string name="regi_edt_password_tips">请输入您的密码</string>
+    <string name="regi_btn_register">注册</string>
 
 </resources>
