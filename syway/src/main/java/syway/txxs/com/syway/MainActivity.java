@@ -13,6 +13,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         //隐藏标题栏Activity才可行
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_main);
     }
 }

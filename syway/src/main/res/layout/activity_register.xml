@@ -184,13 +184,11 @@
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/regi_btn_login"
+            android:id="@+id/regi_btn_logined"
             android:layout_width="60dp"
             android:layout_height="35dp"
-            android:layout_gravity="center_vertical"
-            android:layout_toLeftOf="@id/regi_text_logined"
             android:background="@null"
-            android:hint="@string/regi_btn_login"
+            android:hint="@string/regi_btn_logined"
             android:maxLength="20"
             android:textColor="@color/green"
             android:textSize="12sp" />

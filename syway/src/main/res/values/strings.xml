@@ -12,7 +12,7 @@
     <string name="regi_edt_password_tips">请输入您的密码</string>
     <string name="regi_btn_register">注册</string>
     <string name="regi_text_password_logined">已经注册过优游？</string>
-    <string name="regi_btn_login">点此登录</string>
+    <string name="regi_btn_logined">点此登录</string>
 
 
     <!--登录页面-->
