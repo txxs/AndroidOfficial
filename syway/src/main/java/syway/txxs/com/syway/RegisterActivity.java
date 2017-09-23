@@ -5,17 +5,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import syway.txxs.com.syway.po.User;
 import syway.txxs.com.syway.util.Constants;
+import syway.txxs.com.syway.util.CountDownButtonUtil;
 import syway.txxs.com.syway.util.ToastUtil;
 import syway.txxs.com.syway.util.ValidateUtil;
 
@@ -49,8 +46,8 @@ public class RegisterActivity extends Activity{
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
         sendVcodePhone();//发送验证码
+        regi();//注册
         regiToLogin();//注册跳转到登录页面
-        LayoutInflater inflater = getLayoutInflater();
     }
 
     /**
@@ -69,8 +66,8 @@ public class RegisterActivity extends Activity{
                     return;
                 }
                 User user = new User();
-                if(user!=null){
-                    new AlertDialog.Builder(RegisterActivity.this).setTitle("已经注册啦，请直接登录")
+                if(user==null){
+                    new AlertDialog.Builder(RegisterActivity.this).setTitle(Constants.PHONE_ALREADY_REGISTERED)
                             .setIcon(android.R.drawable.ic_dialog_info)
                             .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                 @Override
@@ -91,11 +88,27 @@ public class RegisterActivity extends Activity{
                                 }
                             }).show();
                 }else{
-                    //发送短信验证码
+                    //发送短信验证码,具体发送在后端进行，andriod端控制发送的时间
+                     new CountDownButtonUtil(60000,1000,regiBtnVcode).start();//参数依次为总时长，计时时间间隔
                 }
             }
         });
+    }
 
+    /**
+     * 注册
+     * 1、验证收到的验证码的正确性（后台进行）
+     * 2、数据库注册（后台进行）
+     */
+    public void regi(){
+        String vcode = regiEdtVcode.getText().toString();
+        Boolean valid = true;//后台程序
+        //验证码有效，执行注册操作
+        if(valid){
+
+        }else{
+            ToastUtil.setToastProperties(RegisterActivity.this, Constants.PHONE_VCODE_WRONG_TIPS);
+        }
     }
 
     /**
