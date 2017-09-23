@@ -1,6 +1,8 @@
 package syway.txxs.com.syway;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -68,8 +70,26 @@ public class RegisterActivity extends Activity{
                 }
                 User user = new User();
                 if(user!=null){
-                    //ToastUtil.setToastProperties(getApplicationContext(), Constants.PHONE_ALREADY_REGISTERED);
-                    return;
+                    new AlertDialog.Builder(RegisterActivity.this).setTitle("已经注册啦，请直接登录")
+                            .setIcon(android.R.drawable.ic_dialog_info)
+                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // 点击“确认”后的操作
+                                    Intent regiToLoginIntent = new Intent(getApplicationContext(),LoginActivity.class);
+                                    String phoneNumber = regiEdtPphone.getText().toString();
+                                    Bundle bundle=new Bundle();
+                                    bundle.putString("phoneNumber", phoneNumber);
+                                    regiToLoginIntent.putExtras(bundle);
+                                    startActivity(regiToLoginIntent);
+                                }
+                            })
+                            .setNegativeButton("返回", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // 点击“返回”后的操作,这里不设置没有任何操作
+                                }
+                            }).show();
                 }else{
                     //发送短信验证码
                 }
