@@ -40,13 +40,13 @@
 
         <EditText
             android:id="@+id/regi_edt_phone"
-            android:layout_width="190dp"
+            android:layout_width="160dp"
             android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
             android:layout_toRightOf="@id/regi_text_phone_number"
             android:background="@null"
             android:hint="@string/regi_edt_phone_tips"
             android:maxLength="20"
-            android:layout_gravity="center_vertical"
             android:textSize="16sp" />
 
         <View
@@ -56,12 +56,12 @@
 
         <Button
             android:id="@+id/regi_btn_vcode"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="3dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="3dp"
             android:background="@color/white"
-            android:text="@string/regi_btn_vcode"/>
+            android:text="@string/regi_btn_vcode" />
 
     </LinearLayout>
 
