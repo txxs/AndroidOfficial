@@ -119,6 +119,8 @@ public class RegisterActivity extends Activity{
             @Override
             public void onClick(View v) {
                 Intent regiToLoginIntent = new Intent(getApplicationContext(),LoginActivity.class);
+                Bundle bundle=new Bundle();
+                regiToLoginIntent.putExtras(bundle);
                 startActivity(regiToLoginIntent);
             }
         });
