@@ -3,13 +3,18 @@ package syway.txxs.com.syway;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import syway.txxs.com.syway.po.User;
+import syway.txxs.com.syway.util.Constants;
+import syway.txxs.com.syway.util.ToastUtil;
 import syway.txxs.com.syway.util.ValidateUtil;
 
 /**
@@ -43,6 +48,7 @@ public class RegisterActivity extends Activity{
         ButterKnife.bind(this);
         sendVcodePhone();//发送验证码
         regiToLogin();//注册跳转到登录页面
+        LayoutInflater inflater = getLayoutInflater();
     }
 
     /**
@@ -52,17 +58,24 @@ public class RegisterActivity extends Activity{
      * 3、发送验证码
      */
     public void sendVcodePhone(){
-        String phoneNumber = regiEdtPphone.getText().toString();
-        if(!ValidateUtil.isPhoneNumber(phoneNumber)){
-            //不是手机号的情况下要异常处理
-        }
+        regiBtnVcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phoneNumber = regiEdtPphone.getText().toString();
+                if(!ValidateUtil.isPhoneNumber(phoneNumber)){
+                    ToastUtil.setToastProperties(RegisterActivity.this, Constants.PHONE_NUMBER_WRONG_TIPS);
+                    return;
+                }
+                User user = new User();
+                if(user!=null){
+                    //ToastUtil.setToastProperties(getApplicationContext(), Constants.PHONE_ALREADY_REGISTERED);
+                    return;
+                }else{
+                    //发送短信验证码
+                }
+            }
+        });
 
-        User user = new User();
-        if(user!=null){
-            //提示已经注册
-        }else{
-            //发送短信验证码
-        }
     }
 
     /**
