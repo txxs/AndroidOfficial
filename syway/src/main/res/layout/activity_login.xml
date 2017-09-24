@@ -113,4 +113,25 @@
         android:text="@string/login_btn_login"
         android:textColor="@color/white"
         android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/login_btn_logined_forget"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:background="@null"
+            android:hint="@string/login_btn_logined_forget"
+            android:maxLength="20"
+            android:textColor="@color/green"
+            android:textSize="12sp" />
+    </LinearLayout>
 </LinearLayout>

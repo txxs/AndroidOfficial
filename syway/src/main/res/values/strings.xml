@@ -15,8 +15,6 @@
     <string name="regi_btn_logined">点此登录</string>
     <string name="regi_toolbar_name">注册</string>
 
-
-
     <!--登录页面-->
     <string name="login_text_phone_number">手机号</string>
     <string name="login_edt_phone_tips">请输入您的手机号</string>
@@ -24,7 +22,20 @@
     <string name="login_edt_password_tips">请输入您的密码</string>
     <string name="login_btn_login">登录</string>
     <string name="login_toolbar_name">登录</string>
+    <string name="login_btn_logined_forget">忘记密码</string>
 
+    <!--找回密码-->
+    <string name="forget_toolbar_name">找回密码</string>
+    <string name="forget_text_phone_number">手机号</string>
+    <string name="forget_edt_phone_tips">请输入您的手机号</string>
+    <string name="forget_btn_vcode">获取验证码</string>
+    <string name="forget_text_vcode">验证码</string>
+    <string name="forget_edt_vcode_tips">请输入您的验证码</string>
+    <string name="forget_text_password">密码</string>
+    <string name="forget_edt_password_tips">请输入密码</string>
+    <string name="forget_text_password_two">确认密码</string>
+    <string name="forget_edt_password_two_tips">请再次输入密码</string>
+    <string name="forget_btn_conform">确认</string>
 
 
 </resources>
