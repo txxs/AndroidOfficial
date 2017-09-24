@@ -1,9 +1,6 @@
 package syway.txxs.com.syway;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -12,7 +9,6 @@ import android.widget.EditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import syway.txxs.com.syway.po.User;
 import syway.txxs.com.syway.util.Constants;
 import syway.txxs.com.syway.util.CountDownButtonUtil;
 import syway.txxs.com.syway.util.ToastUtil;
