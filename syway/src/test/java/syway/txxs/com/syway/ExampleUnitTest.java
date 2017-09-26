@@ -2,7 +2,7 @@ package syway.txxs.com.syway;
 
 import org.junit.Test;
 
-import syway.txxs.com.syway.util.Crypto;
+import syway.txxs.com.syway.utils.Crypto;
 
 import static org.junit.Assert.*;
 

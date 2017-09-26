@@ -1,4 +1,4 @@
-package syway.txxs.com.syway.util;
+package syway.txxs.com.syway.utils;
 
 /**
  * Created by jianghuimin on 2017/9/23.

@@ -1,4 +1,4 @@
-package syway.txxs.com.syway.util;
+package syway.txxs.com.syway.utils;
 
 import android.graphics.Color;
 import android.os.CountDownTimer;

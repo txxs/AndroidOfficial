@@ -19,10 +19,9 @@ import java.io.IOException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import syway.txxs.com.syway.po.User;
-import syway.txxs.com.syway.util.Constants;
-import syway.txxs.com.syway.util.CountDownButtonUtil;
-import syway.txxs.com.syway.util.ToastUtil;
-import syway.txxs.com.syway.util.ValidateUtil;
+import syway.txxs.com.syway.utils.Constants;
+import syway.txxs.com.syway.utils.ToastUtil;
+import syway.txxs.com.syway.utils.ValidateUtil;
 
 /**
  * Created by jianghuimin on 2017/9/21.
