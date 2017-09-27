@@ -4,6 +4,7 @@ import android.service.carrier.CarrierMessagingService;
 import android.util.Log;
 
 import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -11,6 +12,7 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by jianghuimin on 2017/9/25.
@@ -18,7 +20,10 @@ import java.io.IOException;
 
 public class OkHttpUtil {
 
-    final static OkHttpClient client = new OkHttpClient();
+    private static final OkHttpClient mOkHttpClient = new OkHttpClient();
+    static{
+        mOkHttpClient.setConnectTimeout(30, TimeUnit.SECONDS);
+    }
 
     /**
      * 同步的Get请求
@@ -29,7 +34,7 @@ public class OkHttpUtil {
         final Request request = new Request.Builder()
                 .url(url)
                 .build();
-        Call call = client.newCall(request);
+        Call call = mOkHttpClient.newCall(request);
         Response execute = call.execute();
         return execute;
     }
@@ -44,15 +49,34 @@ public class OkHttpUtil {
         return execute.body().string();
     }
 
+
     /**
-     * 异步的get请求
-     * @param url
-     * @param callback
-     
-    private void getAsync(String url, final ResultCallback callback) {
+     * 开启异步线程访问网络
+     * @param request
+     * @param responseCallback
+     */
+    public static void enqueue(Request request, Callback responseCallback){
+        mOkHttpClient.newCall(request).enqueue(responseCallback);
+    }
+    /**
+     * 开启异步线程访问网络, 且不在意返回结果（实现空callback）
+     */
+    public static void enqueue(String url){
         final Request request = new Request.Builder()
                 .url(url)
                 .build();
-        deliveryResult(callback, request);
-    }     */
+        mOkHttpClient.newCall(request).enqueue(new Callback() {
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+
+            }
+
+            @Override
+            public void onFailure(Request request1, IOException arg1) {
+
+            }
+        });
+    }
+
 }
