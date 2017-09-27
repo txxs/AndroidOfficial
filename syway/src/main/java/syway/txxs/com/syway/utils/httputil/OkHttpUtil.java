@@ -1,14 +1,11 @@
 package syway.txxs.com.syway.utils.httputil;
 
-import android.service.carrier.CarrierMessagingService;
-import android.util.Log;
+
 
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
