@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by jianghuimin on 2017/9/25.
- * OKhttpUtil
+ * OKhttpUtil git
  */
 
 public class OkHttpUtil {
