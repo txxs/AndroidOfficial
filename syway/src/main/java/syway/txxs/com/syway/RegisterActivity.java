@@ -5,31 +5,24 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-
-import java.io.IOException;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Request;
 import syway.txxs.com.syway.po.User;
 import syway.txxs.com.syway.utils.Constants;
 import syway.txxs.com.syway.utils.ToastUtil;
 import syway.txxs.com.syway.utils.ValidateUtil;
+import syway.txxs.com.syway.utils.httputil.OkHttpUtil;
 
 /**
  * Created by jianghuimin on 2017/9/21.
  * 注册
  */
 public class RegisterActivity extends Activity{
-
-    OkHttpClient client = new OkHttpClient();
 
     @BindView(R.id.regi_edt_phone)
     EditText regiEdtPphone;//注册的手机号
@@ -98,8 +91,20 @@ public class RegisterActivity extends Activity{
                             }).show();
                 }else{
                     //发送短信验证码,具体发送在后端进行，andriod端控制发送的时间
-                     //new CountDownButtonUtil(60000,1000,regiBtnVcode).start();//参数依次为总时长，计时时间间隔
-                    getRequest();
+                    //可以用于测试的URL："http://120.77.222.5:8080/user"
+                    String URL = "http://120.77.222.5:8081/user";
+                    OkHttpUtil.asynGet(URL, new OkHttpUtil.ResultCallback() {
+                        @Override
+                        public void onError(Request request, Exception e) {
+                            ToastUtil.setToastProperties(RegisterActivity.this, "错误，在主线程中的操作！");
+                        }
+
+                        @Override
+                        public void onResponse(Object response) {
+                            ToastUtil.setToastProperties(RegisterActivity.this, "正确，在主线程中的操作！");
+                        }
+                    });
+
                 }
             }
         });
@@ -134,31 +139,6 @@ public class RegisterActivity extends Activity{
                 startActivity(regiToLoginIntent);
             }
         });
-    }
-
-    public  void getRequest() {
-        final Request request=new Request.Builder()
-                .get()
-                .tag("User")
-                .url("http://120.77.222.5:8080/user")
-                .build();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Response response = null;
-                try {
-                    response = client.newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        Log.i("WY","打印GET响应的数据：" + response.body().string());
-                        ToastUtil.setToastProperties(RegisterActivity.this, "成功");
-                    } else {
-                        throw new IOException("Unexpected code " + response);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
     }
 
 }

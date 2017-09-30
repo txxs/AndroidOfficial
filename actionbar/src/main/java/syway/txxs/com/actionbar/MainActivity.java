@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // 处理动作按钮的点击事件
         switch (item.getItemId()) {
-            case R.id.action_search:
+            //case R.id.action_search:
                // openSearch();
-                return true;
-            case R.id.action_settings:
+                //return true;
+           // case R.id.action_settings:
                 //openSettings();
-                return true;
+               // return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
