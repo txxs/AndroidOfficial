@@ -110,7 +110,7 @@ public class OkHttpUtil {
      * @param address
      * @param callback
      */
-    public static void asynGet(String address, OkHttpUtil.ResultCallback callback) {
+    public static void asynGet(String address, ResultCallback callback) {
         Request request = new Request.Builder()
                 .get()
                 .url(address)
@@ -168,9 +168,4 @@ public class OkHttpUtil {
         });
     }
 
-    public static abstract class ResultCallback<T> {
-        public abstract void onError(Request request, Exception e);
-
-        public abstract void onResponse(T response);
-    }
 }

@@ -20,4 +20,16 @@ public class ValidateUtil {
         Matcher matcher = pattern.matcher(phoneNumber);
         return matcher.matches();
     }
+
+    /**
+     *对字符串进行非空判断
+     * @param
+     * @return
+     */
+    public static Boolean notNull(String str){
+        if(str==null||str.trim().equals("")){
+            return false;
+        }
+        return true;
+    }
 }

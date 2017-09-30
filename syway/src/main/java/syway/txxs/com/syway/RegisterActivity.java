@@ -11,12 +11,10 @@ import android.widget.EditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import okhttp3.Request;
-import syway.txxs.com.syway.po.User;
 import syway.txxs.com.syway.utils.Constants;
+import syway.txxs.com.syway.po.User;
 import syway.txxs.com.syway.utils.ToastUtil;
 import syway.txxs.com.syway.utils.ValidateUtil;
-import syway.txxs.com.syway.utils.httputil.OkHttpUtil;
 
 /**
  * Created by jianghuimin on 2017/9/21.
@@ -92,18 +90,7 @@ public class RegisterActivity extends Activity{
                 }else{
                     //发送短信验证码,具体发送在后端进行，andriod端控制发送的时间
                     //可以用于测试的URL："http://120.77.222.5:8080/user"
-                    String URL = "http://120.77.222.5:8081/user";
-                    OkHttpUtil.asynGet(URL, new OkHttpUtil.ResultCallback() {
-                        @Override
-                        public void onError(Request request, Exception e) {
-                            ToastUtil.setToastProperties(RegisterActivity.this, "错误，在主线程中的操作！");
-                        }
-
-                        @Override
-                        public void onResponse(Object response) {
-                            ToastUtil.setToastProperties(RegisterActivity.this, "正确，在主线程中的操作！");
-                        }
-                    });
+                    String URL = "http://120.77.222.5:8080/user";
 
                 }
             }
