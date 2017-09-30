@@ -48,9 +48,8 @@ public class LoginActivity extends Activity {
         ButterKnife.bind(this);
         //已经注册的号码， 直接传递到登录页面
         Bundle bundle = this.getIntent().getExtras();
-        String phoneNumber = bundle.getString("phoneNumber");
-        if(phoneNumber!=null){
-            loginEdtPhone.setText(phoneNumber);
+        if(bundle!=null&&bundle.getString("phoneNumber")!=null){
+            loginEdtPhone.setText(bundle.getString("phoneNumber"));
         }
         login();
         loginToForgt();//忘记登录
