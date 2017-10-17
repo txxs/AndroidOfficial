@@ -20,7 +20,7 @@
 
         <meta-data android:name="com.amap.api.v2.apikey" android:value="a7db7f2c75b30d7603915785664f707e"/>
         <!--acitivity注册位置-->
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainFrameActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".ForgetActivity"/>
         <activity android:name=".LoginActivity"/>
-
+        <activity android:name=".MainActivity"/>
         <!--service注册位置-->
         <service android:name="com.amap.api.location.APSService"></service>
     </application>
