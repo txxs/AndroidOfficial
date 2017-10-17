@@ -28,7 +28,6 @@ public class MainActivity extends Activity implements LocationSource, AMapLocati
     private AMap aMap;
     private UiSettings mUiSettings;
     public Button button;
-    private OnLocationChangedListener mListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +56,7 @@ public class MainActivity extends Activity implements LocationSource, AMapLocati
         myLocationStyle.interval(2000);
         myLocationStyle.strokeColor(1000);
         myLocationStyle.radiusFillColor(1000);
-        BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.mipmap.share);
+        BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.mipmap.mylocation);
         myLocationStyle.myLocationIcon(bitmapDescriptor);
         myLocationStyle.anchor(0.5f, 1);
         aMap.setMyLocationStyle(myLocationStyle);
