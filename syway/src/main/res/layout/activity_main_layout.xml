@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <RadioButton
+            android:id="@+id/mainlayout_radio_around"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/main_around_choose"
+            android:checked="true"
+            android:text="@string/main_radio_around"
+            style="@style/style_RadioButton"/>
+        <RadioButton
+            android:id="@+id/mainlayout_radio_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/main_hot_not"
+            android:text="@string/main_radio_hot"
+            style="@style/style_RadioButton"/>
+        <RadioButton
+            android:id="@+id/mainlayout_radio_mine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/main_mine_not"
+            android:text="@string/main_radio_mine"
+            style="@style/style_RadioButton"/>
+    </RadioGroup>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/radiogroup"
+        />
+</RelativeLayout>

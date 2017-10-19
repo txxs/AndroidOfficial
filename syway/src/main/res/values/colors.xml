@@ -13,6 +13,8 @@
     <color name="trans">#33000000</color>
     <color name="black">#000000</color>
     <color name="black1">#88000000</color>
+    <color name="blue"> #00BFFF</color>
+
 
     <color name="pickerview_timebtn_nor">#057dff</color>
     <color name="pickerview_timebtn_pre">#c2daf5</color>

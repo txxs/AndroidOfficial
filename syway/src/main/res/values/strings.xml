@@ -37,5 +37,9 @@
     <string name="forget_edt_password_two_tips">请再次输入密码</string>
     <string name="forget_btn_conform">确认</string>
 
+    <!--主页导航栏显示的信息-->
+    <string name="main_radio_around">周围</string>
+    <string name="main_radio_hot">热点</string>
+    <string name="main_radio_mine">我的</string>
 
 </resources>
