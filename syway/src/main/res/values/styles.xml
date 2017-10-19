@@ -11,7 +11,7 @@
         <item name="android:button">@null</item>
         <item name="android:layout_weight">0.25</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColor">@color/mainlayout_text_color</item>
         <item name="android:textSize">12sp</item>
         <item name="android:paddingTop">5dp</item>
     </style>

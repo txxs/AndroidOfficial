@@ -25,7 +25,7 @@ public class MainLayoutActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_layout);
         //初始化界面组件
         initView();
         //初始化ViewPager
@@ -39,29 +39,30 @@ public class MainLayoutActivity extends FragmentActivity {
         hot=(RadioButton)findViewById(R.id.mainlayout_radio_hot);
         mine=(RadioButton)findViewById(R.id.mainlayout_radio_mine);
         //RadioGroup选中状态改变监听
-        mGroup.setOnCheckedChangeListener(new myCheckChangeListener());
+        CheckChangeListener checkChangeListener = new CheckChangeListener();
+        mGroup.setOnCheckedChangeListener(checkChangeListener);
     }
 
     private void initViewPager(){
         AroundFragment aroundFragment = new AroundFragment();
         HotFragment hotFragment = new HotFragment();
-        MineFragment c = new MineFragment();
-        fragmentList=new ArrayList<Fragment>();
+        MineFragment mineFragment = new MineFragment();
+        fragmentList=new ArrayList<>();
         fragmentList.add(aroundFragment);
         fragmentList.add(hotFragment);
-        fragmentList.add(hotFragment);
+        fragmentList.add(mineFragment);
         //ViewPager设置适配器
         mPager.setAdapter(new MainFragmentPagerAdapter(getSupportFragmentManager(), fragmentList));
         //ViewPager显示第一个Fragment
         mPager.setCurrentItem(0);
         //ViewPager页面切换监听
-        mPager.setOnPageChangeListener(new myOnPageChangeListener());
+        mPager.setOnPageChangeListener(new RadioPageChangeListener());
     }
 
     /**
      *RadioButton切换Fragment
      */
-    private class myCheckChangeListener implements RadioGroup.OnCheckedChangeListener{
+    private class CheckChangeListener implements RadioGroup.OnCheckedChangeListener{
 
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -83,7 +84,7 @@ public class MainLayoutActivity extends FragmentActivity {
     /**
      *ViewPager切换Fragment,RadioGroup做相应变化
      */
-    private class myOnPageChangeListener implements ViewPager.OnPageChangeListener{
+    private class RadioPageChangeListener implements ViewPager.OnPageChangeListener{
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -110,5 +111,6 @@ public class MainLayoutActivity extends FragmentActivity {
 
         }
     }
+
 }
 

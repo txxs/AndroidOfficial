@@ -15,7 +15,7 @@
             android:id="@+id/mainlayout_radio_around"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@mipmap/main_around_choose"
+            android:drawableTop="@drawable/mainlayout_around_selector"
             android:checked="true"
             android:text="@string/main_radio_around"
             style="@style/style_RadioButton"/>
@@ -23,14 +23,14 @@
             android:id="@+id/mainlayout_radio_hot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@mipmap/main_hot_not"
+            android:drawableTop="@drawable/mainlayout_hot_selector"
             android:text="@string/main_radio_hot"
             style="@style/style_RadioButton"/>
         <RadioButton
             android:id="@+id/mainlayout_radio_mine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@mipmap/main_mine_not"
+            android:drawableTop="@drawable/mainlayout_mine_selector"
             android:text="@string/main_radio_mine"
             style="@style/style_RadioButton"/>
     </RadioGroup>
