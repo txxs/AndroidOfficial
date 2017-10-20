@@ -34,7 +34,7 @@
             android:text="@string/main_radio_mine"
             style="@style/style_RadioButton"/>
     </RadioGroup>
-    <android.support.v4.view.ViewPager
+    <syway.txxs.com.syway.modifyclass.NoScrollViewPager
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

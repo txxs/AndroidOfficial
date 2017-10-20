@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import java.util.ArrayList;
 
 import syway.txxs.com.syway.adapter.MainFragmentPagerAdapter;
+import syway.txxs.com.syway.modifyclass.NoScrollViewPager;
 
 
 /**
@@ -18,7 +19,7 @@ import syway.txxs.com.syway.adapter.MainFragmentPagerAdapter;
 
 public class MainLayoutActivity extends FragmentActivity {
 
-    private ViewPager mPager;
+    private NoScrollViewPager mPager;
     private RadioGroup mGroup;
     private RadioButton around,hot,mine;
     private ArrayList<Fragment> fragmentList;
@@ -33,7 +34,7 @@ public class MainLayoutActivity extends FragmentActivity {
     }
 
     private void initView(){
-        mPager=(ViewPager)findViewById(R.id.viewPager);
+        mPager=(NoScrollViewPager)findViewById(R.id.viewPager);
         mGroup=(RadioGroup)findViewById(R.id.radiogroup);
         around=(RadioButton)findViewById(R.id.mainlayout_radio_around);
         hot=(RadioButton)findViewById(R.id.mainlayout_radio_hot);
@@ -55,8 +56,7 @@ public class MainLayoutActivity extends FragmentActivity {
         mPager.setAdapter(new MainFragmentPagerAdapter(getSupportFragmentManager(), fragmentList));
         //ViewPager显示第一个Fragment
         mPager.setCurrentItem(0);
-        //ViewPager页面切换监听
-        mPager.setOnPageChangeListener(new RadioPageChangeListener());
+        mPager.setNoScroll(true); //禁止手动滑动
     }
 
     /**
@@ -78,37 +78,6 @@ public class MainLayoutActivity extends FragmentActivity {
                     mPager.setCurrentItem(2,false);
                     break;
             }
-        }
-    }
-
-    /**
-     *ViewPager切换Fragment,RadioGroup做相应变化
-     */
-    private class RadioPageChangeListener implements ViewPager.OnPageChangeListener{
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            switch (position){
-                case 0:
-                    mGroup.check(R.id.mainlayout_radio_around);
-                    break;
-                case 1:
-                    mGroup.check(R.id.mainlayout_radio_hot);
-                    break;
-                case 2:
-                    mGroup.check(R.id.mainlayout_radio_mine);
-                    break;
-            }
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
         }
     }
 
