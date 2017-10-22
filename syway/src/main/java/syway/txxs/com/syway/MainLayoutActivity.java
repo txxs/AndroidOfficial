@@ -1,5 +1,6 @@
 package syway.txxs.com.syway;
 
+import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -22,11 +23,16 @@ public class MainLayoutActivity extends FragmentActivity {
     private NoScrollViewPager mPager;
     private RadioGroup mGroup;
     private RadioButton around,hot,mine;
+    private AroundFragment aroundFragment;
+    private HotFragment hotFragment;
+    private MineFragment mineFragment;
     private ArrayList<Fragment> fragmentList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_layout);
+        getWindow().setFormat(PixelFormat.TRANSLUCENT);
         //初始化界面组件
         initView();
         //初始化ViewPager
@@ -45,9 +51,9 @@ public class MainLayoutActivity extends FragmentActivity {
     }
 
     private void initViewPager(){
-        AroundFragment aroundFragment = new AroundFragment();
-        HotFragment hotFragment = new HotFragment();
-        MineFragment mineFragment = new MineFragment();
+        aroundFragment = new AroundFragment();
+        hotFragment = new HotFragment();
+        mineFragment = new MineFragment();
         fragmentList=new ArrayList<>();
         fragmentList.add(aroundFragment);
         fragmentList.add(hotFragment);
@@ -68,7 +74,6 @@ public class MainLayoutActivity extends FragmentActivity {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId){
                 case R.id.mainlayout_radio_around:
-                    //ViewPager显示第一个Fragment且关闭页面切换动画效果
                     mPager.setCurrentItem(0,false);
                     break;
                 case R.id.mainlayout_radio_hot:
