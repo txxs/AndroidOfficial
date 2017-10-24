@@ -13,17 +13,13 @@ import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
-import com.amap.api.maps.model.LatLng;
-import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MyLocationStyle;
 
 /**
  * Created by jianghuimin on 2017/10/19.
  */
 
-public class AroundFragment extends Fragment  implements LocationSource, AMapLocationListener,AMap.OnMapClickListener
-        ,AMap.OnMarkerClickListener{
-
+public class AroundFragment extends Fragment implements LocationSource,AMapLocationListener {
     private MapView mapView;
     private AMap aMap;
     private UiSettings mUiSettings;
@@ -41,30 +37,28 @@ public class AroundFragment extends Fragment  implements LocationSource, AMapLoc
     }
 
     private void initview( Bundle savedInstanceState,View view){
-        if (aMap == null) {
-            aMap = mapView.getMap();
-        }else{
-            //解决重新弄定位的问题
-            aMap.clear();
-            aMap.setLocationSource(this);
-            aMap.setMyLocationEnabled(true);
-            aMap = mapView.getMap();
-        }
+        aMap = mapView.getMap();
         MyLocationStyle myLocationStyle = new MyLocationStyle();
+        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE );
         myLocationStyle.showMyLocation(true);
         myLocationStyle.interval(2000);
-        aMap.setMyLocationStyle(myLocationStyle);
-        aMap.setMyLocationEnabled(true);
+        myLocationStyle.strokeColor(1000);
+        myLocationStyle.radiusFillColor(1000);
         aMap.setMyLocationStyle(myLocationStyle);
         aMap.moveCamera(CameraUpdateFactory.zoomTo(15));
+        //设置定位监听
+        aMap.setLocationSource(this);
     }
 
+    /**
+     * 设置地图的基本图标的显示
+     */
     public void uiBasic(){
         mUiSettings = aMap.getUiSettings();
         mUiSettings.setMyLocationButtonEnabled(true); //显示默认的定位按钮
         mUiSettings.setRotateGesturesEnabled(false);//不允许手势旋转地图
+        mUiSettings.setZoomControlsEnabled(false);//隐藏下方的缩放按钮
     }
-
 
     @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
@@ -72,22 +66,12 @@ public class AroundFragment extends Fragment  implements LocationSource, AMapLoc
     }
 
     @Override
-    public void activate(LocationSource.OnLocationChangedListener onLocationChangedListener) {
+    public void activate(OnLocationChangedListener onLocationChangedListener) {
 
     }
 
     @Override
     public void deactivate() {
 
-    }
-
-    @Override
-    public void onMapClick(LatLng latLng) {
-        //点击地图随机的位置，会触发相关的动作
-    }
-
-    @Override
-    public boolean onMarkerClick(Marker marker) {
-        return false;
     }
 }
