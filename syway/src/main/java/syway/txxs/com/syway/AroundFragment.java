@@ -39,11 +39,10 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
     private void initview( Bundle savedInstanceState,View view){
         aMap = mapView.getMap();
         MyLocationStyle myLocationStyle = new MyLocationStyle();
-        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE );
-        myLocationStyle.showMyLocation(true);
         myLocationStyle.interval(2000);
-        myLocationStyle.strokeColor(1000);
-        myLocationStyle.radiusFillColor(1000);
+        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE);
+        myLocationStyle.showMyLocation(true);
+        aMap.setMyLocationEnabled(true);
         aMap.setMyLocationStyle(myLocationStyle);
         aMap.moveCamera(CameraUpdateFactory.zoomTo(15));
         //设置定位监听
