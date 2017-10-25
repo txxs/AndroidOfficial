@@ -68,16 +68,16 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
      * 设置自定义风格
      */
     public void customLocationStyle(){
+        aMap.moveCamera(CameraUpdateFactory.zoomTo(15));
         aMap.setLocationSource(this);// 设置定位监听
         MyLocationStyle myLocationStyle = new MyLocationStyle();
         myLocationStyle.interval(2000);
-        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);
+        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE);
         //将蓝圈设置为不可见
         myLocationStyle.strokeColor(1000);
         myLocationStyle.radiusFillColor(1000);
         myLocationStyle.showMyLocation(true);
         aMap.setMyLocationStyle(myLocationStyle);
-        aMap.moveCamera(CameraUpdateFactory.zoomTo(15));
         aMap.setMyLocationEnabled(true);
     }
 
