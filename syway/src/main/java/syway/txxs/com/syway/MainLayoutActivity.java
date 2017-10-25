@@ -63,7 +63,7 @@ public class MainLayoutActivity extends FragmentActivity  implements View.OnClic
         mFragments = new Fragment[4];
         mFragments[0] = new AroundFragment();// 页面一添加到集合中
         mFragments[1] = new HotFragment();// 页面二添加到集合中
-        mFragments[2] = new MineFragment();// 页面三添加到集合中
+        mFragments[2] = new MineFragment();// 页面三添加到集合中z
 
         manager = mContext.getSupportFragmentManager();// 获得FragmentManager
         fragmentTransaction = manager.beginTransaction();// 获得事务
