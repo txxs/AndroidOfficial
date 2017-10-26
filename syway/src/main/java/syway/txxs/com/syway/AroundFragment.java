@@ -2,7 +2,6 @@ package syway.txxs.com.syway;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +16,14 @@ import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
-import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MyLocationStyle;
+
 
 /**
  * Created by jianghuimin on 2017/10/19.
  */
 
-public class AroundFragment extends Fragment implements LocationSource,AMapLocationListener {
+public class AroundFragment extends Fragment implements LocationSource,AMapLocationListener{
     private MapView mapView;
     private AMap aMap;
     private UiSettings mUiSettings;
@@ -46,7 +45,7 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
     }
 
     private void initview(){
-        if(aMap == null){
+        if(aMap==null){
             aMap = mapView.getMap();
             basicUIOnMap();
             customLocationStyle();
@@ -68,8 +67,6 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
      * 设置自定义风格
      */
     public void customLocationStyle(){
-        aMap.moveCamera(CameraUpdateFactory.zoomTo(15));
-        aMap.setLocationSource(this);// 设置定位监听
         MyLocationStyle myLocationStyle = new MyLocationStyle();
         myLocationStyle.interval(2000);
         myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE);
@@ -77,7 +74,10 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
         myLocationStyle.strokeColor(1000);
         myLocationStyle.radiusFillColor(1000);
         myLocationStyle.showMyLocation(true);
+        aMap.setMapType(AMap.MAP_TYPE_NORMAL);//设置地图类型
         aMap.setMyLocationStyle(myLocationStyle);
+        aMap.moveCamera(CameraUpdateFactory.zoomTo(15));
+        aMap.setLocationSource(this);
         aMap.setMyLocationEnabled(true);
     }
 
@@ -90,9 +90,10 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
         if (mListener != null && amapLocation != null) {
             if (amapLocation != null && amapLocation.getErrorCode() == 0) {
                 mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
-            } else {
-                String errText = "定位失败," + amapLocation.getErrorCode()+ ": " + amapLocation.getErrorInfo();
+            }else{
+                Toast.makeText(getContext(),"Syway定位失败",Toast.LENGTH_LONG).show();
             }
+
         }
     }
 
