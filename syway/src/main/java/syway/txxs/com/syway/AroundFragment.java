@@ -146,6 +146,7 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
     public void onPause() {
         super.onPause();
         mapView.onPause();
+        deactivate();
     }
 
     /**
@@ -164,5 +165,8 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
     public void onDestroy() {
         super.onDestroy();
         mapView.onDestroy();
+        if(null != mlocationClient){
+            mlocationClient.onDestroy();
+        }
     }
 }
