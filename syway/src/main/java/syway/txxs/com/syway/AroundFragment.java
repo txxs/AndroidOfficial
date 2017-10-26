@@ -16,6 +16,7 @@ import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
+import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.MyLocationStyle;
 
 
@@ -70,7 +71,7 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
         MyLocationStyle myLocationStyle = new MyLocationStyle();
         myLocationStyle.interval(2000);
         myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE);
-        //将蓝圈设置为不可见
+        myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.mipmap.gps_point));
         myLocationStyle.strokeColor(1000);
         myLocationStyle.radiusFillColor(1000);
         myLocationStyle.showMyLocation(true);
@@ -109,10 +110,11 @@ public class AroundFragment extends Fragment implements LocationSource,AMapLocat
             mLocationOption = new AMapLocationClientOption();
             mlocationClient.setLocationListener(this);
             mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
-            mlocationClient.setLocationOption(mLocationOption);
             mLocationOption.setOnceLocation(false);
-            mLocationOption.setGpsFirst(true);
+            //mLocationOption.setGpsFirst(true);
             mLocationOption.setInterval(1000);
+            mLocationOption.setOnceLocationLatest(true);
+            mlocationClient.setLocationOption(mLocationOption);
             mlocationClient.startLocation();
         }
     }
